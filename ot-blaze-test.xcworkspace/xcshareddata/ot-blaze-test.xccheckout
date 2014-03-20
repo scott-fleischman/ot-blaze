@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0A2E0BCD-F177-4B75-AF49-A5AA4D76B7E2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ot-blaze-test</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>472DA87E-308B-440D-B319-C4BD12017CDD</key>
+		<string>https://github.com/scott-fleischman/ot-blaze.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ot-blaze-test.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>472DA87E-308B-440D-B319-C4BD12017CDD</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/scott-fleischman/ot-blaze.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>472DA87E-308B-440D-B319-C4BD12017CDD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>472DA87E-308B-440D-B319-C4BD12017CDD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ot-blaze</string>
+		</dict>
+	</array>
+</dict>
+</plist>
