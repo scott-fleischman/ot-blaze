@@ -13,7 +13,6 @@ std::vector<CTFontTableTag> ConvertCFArrayToVector(CFArrayRef texts)
 	for (CFIndex index = 0; index < textCount; ++index)
 	{
 		CTFontTableTag tag = (CTFontTableTag) (uintptr_t) CFArrayGetValueAtIndex(texts, index);
-		std::cout << "tags[" << index << "]=" << tag << std::endl;
 		results.push_back(tag);
 	}
 	return results;
@@ -26,20 +25,24 @@ int main(int argc, const char * argv[])
 	
 	unsigned unitsPerEm = CTFontGetUnitsPerEm(font);
 	CFArrayRef fontTableNames = CTFontCopyAvailableTables(font, kCTFontTableOptionNoOptions);
-	auto tags = ConvertCFArrayToVector(fontTableNames);
 	
-	CTFontTableTag blah = 'BASE';
-	std::cout << std::hex << blah << std::endl;
+	auto tableTags = ConvertCFArrayToVector(fontTableNames);
+	std::cout << "tagCount: " << tableTags.size() << std::endl;
+	std::cout << std::hex << "tags[0]: " << tableTags[0] << std::endl;
 	
-	std::cout << "tagCount: " << tags.size() << std::endl;
-	std::cout << std::hex << "tags[0]: " << tags[0] << std::endl;
+	auto table = CTFontCopyTable(font, kCTFontTableHhea, kCTFontTableOptionNoOptions);
 	
+	const uint8_t * data = CFDataGetBytePtr(table);
+	auto raw = reinterpret_cast<const uint32_t *>(data);
+	auto vraw = ot::BigEndianToLittleEndian(*raw);
+	auto sraw = static_cast<int32_t>(vraw);
+	ot::fixed16d16_t value { sraw };
+	std::cout << "result: " << value.integer() << std::endl;
+	
+	CFRelease(table);
 	CFRelease(fontTableNames);
 	CFRelease(font);
 	CFRelease(fontName);
-	
-	ot_blaze x;
-	x.HelloWorld("Hi from ot-blaze!");
 	
 	std::cout << "unitsPerEm = " << unitsPerEm << std::endl;
 	
