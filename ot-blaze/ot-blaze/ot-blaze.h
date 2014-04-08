@@ -4,6 +4,7 @@
 #pragma GCC visibility push(default)
 
 #include <cstdint>
+#include <be_uint32_t.h>
 
 namespace ot
 {

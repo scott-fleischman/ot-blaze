@@ -32,11 +32,9 @@ int main(int argc, const char * argv[])
 	
 	auto table = CTFontCopyTable(font, kCTFontTableHhea, kCTFontTableOptionNoOptions);
 	
-	const uint8_t * data = CFDataGetBytePtr(table);
-	auto raw = reinterpret_cast<const uint32_t *>(data);
-	auto vraw = ot::BigEndianToLittleEndian(*raw);
-	auto sraw = static_cast<int32_t>(vraw);
-	ot::fixed16d16_t value { sraw };
+	const UInt8 * data = CFDataGetBytePtr(table);
+	const be_uint32_t * sraw = reinterpret_cast<const be_uint32_t *>(data);
+	ot::fixed16d16_t value { static_cast<int32_t>(sraw->GetValue()) };
 	std::cout << "result: " << value.integer() << std::endl;
 	
 	CFRelease(table);
