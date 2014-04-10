@@ -33,7 +33,7 @@ int main(int argc, const char * argv[])
 	auto table = CTFontCopyTable(font, kCTFontTableHhea, kCTFontTableOptionNoOptions);
 	
 	const UInt8 * data = CFDataGetBytePtr(table);
-	const ot::be_uint32_t * sraw = reinterpret_cast<const ot::be_uint32_t *>(data);
+	const ot::big_endian<uint32_t> * sraw = reinterpret_cast<const ot::big_endian<uint32_t> *>(data);
 	std::cout << "value: " << std::hex << sraw->GetValue() << std::endl;
 	ot::fixed16d16_t value { static_cast<int32_t>(sraw->GetValue()) };
 	std::cout << "result: " << value.integer() << std::endl;
