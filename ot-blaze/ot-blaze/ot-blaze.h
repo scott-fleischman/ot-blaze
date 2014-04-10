@@ -4,7 +4,8 @@
 #pragma GCC visibility push(default)
 
 #include <cstdint>
-#include <be_uint32_t.h>
+
+#include "big_endian.h"
 
 namespace ot
 {
