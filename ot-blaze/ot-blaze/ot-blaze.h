@@ -10,8 +10,6 @@
 namespace ot
 {
 
-uint32_t BigEndianToLittleEndian(uint32_t bigEndian);
-	
 class fixed16d16_t
 {
 public:
