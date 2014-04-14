@@ -11,7 +11,7 @@ template<typename T>
 class big_endian
 {
 public:
-	big_endian(std::array<T, sizeof(T)> bytes)
+	big_endian(std::array<uint8_t, sizeof(T)> bytes)
 		: m_bytes(bytes)
 	{
 	}
