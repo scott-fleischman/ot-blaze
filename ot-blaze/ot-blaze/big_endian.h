@@ -2,7 +2,6 @@
 
 #include <array>
 #include <numeric>
-#include <iostream>
 
 namespace ot
 {
