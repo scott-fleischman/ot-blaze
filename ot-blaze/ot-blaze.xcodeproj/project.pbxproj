@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B980271918F4886900108167 /* big_endian.h in Headers */ = {isa = PBXBuildFile; fileRef = B980271718F4886900108167 /* big_endian.h */; };
 		B9BF19BB18DB74C80066FD51 /* ot-blaze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9BF19BA18DB74C80066FD51 /* ot-blaze.cpp */; };
+		B9CBB99318FCE71D00DF4D60 /* data_types.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CBB99118FCE71D00DF4D60 /* data_types.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B9BF19B818DB74C80066FD51 /* ot-blaze.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ot-blaze.h"; sourceTree = "<group>"; };
 		B9BF19B918DB74C80066FD51 /* ot-blazePriv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ot-blazePriv.h"; sourceTree = "<group>"; };
 		B9BF19BA18DB74C80066FD51 /* ot-blaze.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "ot-blaze.cpp"; sourceTree = "<group>"; };
+		B9CBB99118FCE71D00DF4D60 /* data_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = data_types.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXGroup;
 			children = (
 				B980271718F4886900108167 /* big_endian.h */,
+				B9CBB99118FCE71D00DF4D60 /* data_types.h */,
 			);
 			name = ot;
 			sourceTree = "<group>";
@@ -86,6 +89,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CBB99318FCE71D00DF4D60 /* data_types.h in Headers */,
 				B980271918F4886900108167 /* big_endian.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

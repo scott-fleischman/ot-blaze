@@ -5,6 +5,13 @@
 
 namespace ot
 {
+	
+template<typename T>
+T GetBigEndianValue(std::array<uint8_t, sizeof(T)> bytes)
+{
+	return std::accumulate(bytes.begin(), bytes.end(), 0,
+		[](const T accumulator, const uint8_t byte) { return (accumulator << 8) | byte; });
+}
 
 template<typename T>
 class big_endian
@@ -17,8 +24,7 @@ public:
 	
 	T GetValue() const
 	{
-		return std::accumulate(m_bytes.begin(), m_bytes.end(), 0,
-			[](const T accumulator, const uint8_t byte) { return (accumulator << 8) | byte; });
+		return GetBigEndianValue<T>(m_bytes);
 	};
 
 private:
