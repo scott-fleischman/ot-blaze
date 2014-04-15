@@ -6,9 +6,11 @@
 namespace ot
 {
 	
-template<typename T>
-T GetBigEndianValue(std::array<uint8_t, sizeof(T)> bytes)
+template<typename T, size_t S>
+T GetBigEndianValue(std::array<uint8_t, S> bytes)
 {
+	static_assert(sizeof(T) >= S, "sizeof(T) must be >= S");
+	
 	return std::accumulate(bytes.begin(), bytes.end(), 0,
 		[](const T accumulator, const uint8_t byte) { return (accumulator << 8) | byte; });
 }
@@ -24,7 +26,7 @@ public:
 	
 	T GetValue() const
 	{
-		return GetBigEndianValue<T>(m_bytes);
+		return GetBigEndianValue<T, sizeof(T)>(m_bytes);
 	};
 
 private:

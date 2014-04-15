@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90B487C18FD953D00BA6CBD /* data_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B90B487A18FD953D00BA6CBD /* data_types.cpp */; };
 		B98F2BE518FC6ABF00E07898 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B98F2BE418FC6ABF00E07898 /* main.cpp */; };
 		B98F2BE718FC6ABF00E07898 /* ot_blaze_gtest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B98F2BE618FC6ABF00E07898 /* ot_blaze_gtest.1 */; };
 		B98F2C0C18FC6DA300E07898 /* gtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98F2C0B18FC6DA300E07898 /* gtest.framework */; };
@@ -28,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B90B487A18FD953D00BA6CBD /* data_types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = data_types.cpp; sourceTree = "<group>"; };
 		B98F2BE118FC6ABF00E07898 /* ot-blaze-gtest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ot-blaze-gtest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98F2BE418FC6ABF00E07898 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B98F2BE618FC6ABF00E07898 /* ot_blaze_gtest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ot_blaze_gtest.1; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				B98F2BE418FC6ABF00E07898 /* main.cpp */,
 				B98F2BE618FC6ABF00E07898 /* ot_blaze_gtest.1 */,
 				B98F2C1518FC726F00E07898 /* big_endian.cpp */,
+				B90B487A18FD953D00BA6CBD /* data_types.cpp */,
 			);
 			path = "ot-blaze-gtest";
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B98F2BE518FC6ABF00E07898 /* main.cpp in Sources */,
+				B90B487C18FD953D00BA6CBD /* data_types.cpp in Sources */,
 				B98F2C1718FC726F00E07898 /* big_endian.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +277,7 @@
 				B98F2BEC18FC6ABF00E07898 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
