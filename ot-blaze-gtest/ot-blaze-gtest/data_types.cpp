@@ -1,5 +1,6 @@
-#include <data_types.h>
 #include <gtest/gtest.h>
+
+#include "ot/data_types.h"
 
 TEST(DataTypes, BigEndianUint24)
 {

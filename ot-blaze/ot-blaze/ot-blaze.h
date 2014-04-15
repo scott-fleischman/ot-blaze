@@ -5,7 +5,8 @@
 
 #include <cstdint>
 
-#include "big_endian.h"
+#include "ot/big_endian.h"
+#include "ot/data_types.h"
 
 namespace ot
 {

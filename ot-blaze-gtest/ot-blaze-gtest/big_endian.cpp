@@ -1,5 +1,6 @@
-#include <big_endian.h>
 #include <gtest/gtest.h>
+
+#include "ot/big_endian.h"
 
 TEST(BigEndian, Uint32)
 {
