@@ -24,3 +24,28 @@ TEST(BigEndian, NegativeInt32)
 	int32_t expected = -2;
 	EXPECT_EQ(expected, big_endian.GetValue());
 }
+
+TEST(BigEndian, Uint16)
+{
+	auto bytes = std::array<uint8_t, 2> { 0x02, 0x01 };
+	auto big_endian = ot::big_endian<uint16_t> { bytes };
+	uint16_t expected = 0x0201;
+	EXPECT_EQ(expected, big_endian.GetValue());
+}
+
+TEST(BigEndian, Int16)
+{
+	auto bytes = std::array<uint8_t, 2> { 0x02, 0x01 };
+	auto big_endian = ot::big_endian<int16_t> { bytes };
+	int16_t expected = 0x0201;
+	EXPECT_EQ(expected, big_endian.GetValue());
+}
+
+TEST(BigEndian, NegativeInt16)
+{
+	auto bytes = std::array<uint8_t, 2> { 0xff, 0xfe };
+	auto big_endian = ot::big_endian<int16_t> { bytes };
+	int16_t expected = -2;
+	EXPECT_EQ(expected, big_endian.GetValue());
+}
+
