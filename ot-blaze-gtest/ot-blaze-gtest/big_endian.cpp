@@ -2,51 +2,29 @@
 
 #include "ot/big_endian.h"
 
-TEST(BigEndian, Uint32)
+template<typename T, size_t S>
+void TestBigEndian(T expected, std::array<uint8_t, S> bytes)
 {
-	auto bytes = std::array<uint8_t, 4> { 0x04, 0x03, 0x02, 0x01 };
-	auto big_endian = ot::big_endian<uint32_t> { bytes };
-	uint32_t expected = 0x04030201;
+	auto big_endian = ot::data_type::big_endian<T, S> { bytes };
 	EXPECT_EQ(expected, big_endian.GetValue());
 }
 
-TEST(BigEndian, Int32)
+TEST(BigEndian, 4Byte_uint_fast32_t)
 {
-	auto bytes = std::array<uint8_t, 4> { 0x04, 0x03, 0x02, 0x01 };
-	auto big_endian = ot::big_endian<int32_t> { bytes };
-	int32_t expected = 0x04030201;
-	EXPECT_EQ(expected, big_endian.GetValue());
+	TestBigEndian<uint_fast32_t, 4>(0x04030201, { 0x04, 0x03, 0x02, 0x01 });
 }
 
-TEST(BigEndian, NegativeInt32)
+TEST(BigEndian, 4Byte_int_fast32_t)
 {
-	auto bytes = std::array<uint8_t, 4> { 0xff, 0xff, 0xff, 0xfe };
-	auto big_endian = ot::big_endian<int32_t> { bytes };
-	int32_t expected = -2;
-	EXPECT_EQ(expected, big_endian.GetValue());
+	TestBigEndian<int_fast32_t, 4>(0x04030201, { 0x04, 0x03, 0x02, 0x01 });
 }
 
-TEST(BigEndian, Uint16)
+TEST(BigEndian, 4Byte_Negative_int_fast32_t)
 {
-	auto bytes = std::array<uint8_t, 2> { 0x02, 0x01 };
-	auto big_endian = ot::big_endian<uint16_t> { bytes };
-	uint16_t expected = 0x0201;
-	EXPECT_EQ(expected, big_endian.GetValue());
+	TestBigEndian<int_fast32_t, 4>(-2, { 0xff, 0xff, 0xff, 0xfe });
 }
 
-TEST(BigEndian, Int16)
+TEST(BigEndian, 3Byte_uint_fast32_t)
 {
-	auto bytes = std::array<uint8_t, 2> { 0x02, 0x01 };
-	auto big_endian = ot::big_endian<int16_t> { bytes };
-	int16_t expected = 0x0201;
-	EXPECT_EQ(expected, big_endian.GetValue());
+	TestBigEndian<uint_fast32_t, 3>(0x00030201, { 0x03, 0x02, 0x01 });
 }
-
-TEST(BigEndian, NegativeInt16)
-{
-	auto bytes = std::array<uint8_t, 2> { 0xff, 0xfe };
-	auto big_endian = ot::big_endian<int16_t> { bytes };
-	int16_t expected = -2;
-	EXPECT_EQ(expected, big_endian.GetValue());
-}
-

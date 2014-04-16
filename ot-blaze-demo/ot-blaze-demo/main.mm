@@ -32,11 +32,10 @@ int main(int argc, const char * argv[])
 	
 	auto table = CTFontCopyTable(font, kCTFontTableHhea, kCTFontTableOptionNoOptions);
 	
-	const UInt8 * data = CFDataGetBytePtr(table);
-	const ot::big_endian<uint32_t> * sraw = reinterpret_cast<const ot::big_endian<uint32_t> *>(data);
-	std::cout << "value: " << std::hex << sraw->GetValue() << std::endl;
-	ot::fixed16d16_t value { static_cast<int32_t>(sraw->GetValue()) };
-	std::cout << "result: " << value.integer() << std::endl;
+	const void * data = CFDataGetBytePtr(table);
+	const ot::data_type::Fixed * tableVersionNumber = static_cast<const ot::data_type::Fixed *>(data);
+	std::cout << "tableVersionNumber.integer = " << std::hex << tableVersionNumber->GetInteger() << std::endl;
+	std::cout << "tableVersionNumber.fraction = " << std::hex << tableVersionNumber->GetFraction() << std::endl;
 	
 	CFRelease(table);
 	CFRelease(fontTableNames);
