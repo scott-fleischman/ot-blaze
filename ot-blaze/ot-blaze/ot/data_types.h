@@ -50,6 +50,12 @@ private:
 };
 static_assert(sizeof(Fixed) == 4, "Fixed must be 4 bytes");
 
+using FWORD = big_endian<int_fast16_t, 2>;
+static_assert(sizeof(FWORD) == 2, "FWORD must be 2 bytes");
+	
+using UFWORD = big_endian<uint_fast16_t, 2>;
+static_assert(sizeof(UFWORD) == 2, "UFWORD must be 2 bytes");
+	
 class F2DOT14
 {
 public:
