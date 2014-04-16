@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		B90B487F18FD97DF00BA6CBD /* big_endian.h in Headers */ = {isa = PBXBuildFile; fileRef = B90B487D18FD97DF00BA6CBD /* big_endian.h */; };
 		B90B488018FD97DF00BA6CBD /* data_types.h in Headers */ = {isa = PBXBuildFile; fileRef = B90B487E18FD97DF00BA6CBD /* data_types.h */; };
+		B90E837418FEDDE900F72ECE /* hhea.h in Headers */ = {isa = PBXBuildFile; fileRef = B90E837218FEDDE900F72ECE /* hhea.h */; };
 		B9BF19BB18DB74C80066FD51 /* ot-blaze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9BF19BA18DB74C80066FD51 /* ot-blaze.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B90B487D18FD97DF00BA6CBD /* big_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = big_endian.h; path = ot/big_endian.h; sourceTree = "<group>"; };
 		B90B487E18FD97DF00BA6CBD /* data_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = data_types.h; path = ot/data_types.h; sourceTree = "<group>"; };
+		B90E837218FEDDE900F72ECE /* hhea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hhea.h; path = ot/table/hhea.h; sourceTree = "<group>"; };
+		B90E837518FEE0C900F72ECE /* tables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tables.h; path = ot/tables.h; sourceTree = "<group>"; };
+		B90E837618FEE2B600F72ECE /* head.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = head.h; path = ot/table/head.h; sourceTree = "<group>"; };
 		B9BF19B118DB74C80066FD51 /* ot-blaze.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "ot-blaze.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9BF19B518DB74C80066FD51 /* ot-blaze-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ot-blaze-Prefix.pch"; sourceTree = "<group>"; };
 		B9BF19B618DB74C80066FD51 /* ot-blazeProj.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ot-blazeProj.xcconfig"; sourceTree = "<group>"; };
@@ -35,11 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B90E836F18FEDDB800F72ECE /* table */ = {
+			isa = PBXGroup;
+			children = (
+				B90E837218FEDDE900F72ECE /* hhea.h */,
+				B90E837618FEE2B600F72ECE /* head.h */,
+			);
+			name = table;
+			sourceTree = "<group>";
+		};
 		B980271418F4848E00108167 /* ot */ = {
 			isa = PBXGroup;
 			children = (
+				B90E836F18FEDDB800F72ECE /* table */,
 				B90B487D18FD97DF00BA6CBD /* big_endian.h */,
 				B90B487E18FD97DF00BA6CBD /* data_types.h */,
+				B90E837518FEE0C900F72ECE /* tables.h */,
 			);
 			name = ot;
 			sourceTree = "<group>";
@@ -89,6 +104,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B90E837418FEDDE900F72ECE /* hhea.h in Headers */,
 				B90B488018FD97DF00BA6CBD /* data_types.h in Headers */,
 				B90B487F18FD97DF00BA6CBD /* big_endian.h in Headers */,
 			);
@@ -184,6 +200,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"ot-blaze",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -217,6 +238,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"ot-blaze",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};

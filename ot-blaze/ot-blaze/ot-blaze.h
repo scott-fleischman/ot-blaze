@@ -3,9 +3,8 @@
 // The classes below are exported
 #pragma GCC visibility push(default)
 
-#include <cstdint>
-
-#include "ot/data_types.h"
+#include <ot/data_types.h>
+#include <ot/tables.h>
 
 namespace ot
 {
