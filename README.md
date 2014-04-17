@@ -1,7 +1,7 @@
 ot-blaze
 ========
 
-OpenType table loader in C++14
+OpenType table loader in C++11
 
 Requires googletest framework in parallel directory:
 
