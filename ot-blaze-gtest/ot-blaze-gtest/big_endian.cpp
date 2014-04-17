@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "ot/big_endian.h"
+#include <ot/data_type/big_endian.h>
 
 template<typename T, size_t S>
 void TestBigEndian(T expected, std::array<uint8_t, S> bytes)

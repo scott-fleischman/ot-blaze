@@ -1,6 +1,7 @@
 #pragma once
 
-#include "big_endian.h"
+#include <ot/data_type/big_endian.h>
+#include <ot/data_type/fixed_point.h>
 
 #include <climits>
 

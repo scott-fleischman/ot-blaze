@@ -13,6 +13,7 @@
 		B98F2C0C18FC6DA300E07898 /* gtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98F2C0B18FC6DA300E07898 /* gtest.framework */; };
 		B98F2C1718FC726F00E07898 /* big_endian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B98F2C1518FC726F00E07898 /* big_endian.cpp */; };
 		B98F2C1918FC728800E07898 /* ot-blaze.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B98F2C1818FC728800E07898 /* ot-blaze.dylib */; };
+		B9F213251900200B006509AE /* fixed_point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F213231900200B006509AE /* fixed_point.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 		B98F2C1218FC700C00E07898 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = "../../../Library/Developer/Xcode/DerivedData/ot-blaze-test-hiafpcsrnkubowfykrrajnnthfjd/Build/Products/Debug/libgtest.a"; sourceTree = "<group>"; };
 		B98F2C1518FC726F00E07898 /* big_endian.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = big_endian.cpp; sourceTree = "<group>"; };
 		B98F2C1818FC728800E07898 /* ot-blaze.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "ot-blaze.dylib"; path = "../../../Library/Developer/Xcode/DerivedData/ot-blaze-test-hiafpcsrnkubowfykrrajnnthfjd/Build/Products/Debug/ot-blaze.dylib"; sourceTree = "<group>"; };
+		B9F213231900200B006509AE /* fixed_point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fixed_point.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				B98F2BE618FC6ABF00E07898 /* ot_blaze_gtest.1 */,
 				B98F2C1518FC726F00E07898 /* big_endian.cpp */,
 				B90B487A18FD953D00BA6CBD /* data_types.cpp */,
+				B9F213231900200B006509AE /* fixed_point.cpp */,
 			);
 			path = "ot-blaze-gtest";
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B98F2BE518FC6ABF00E07898 /* main.cpp in Sources */,
+				B9F213251900200B006509AE /* fixed_point.cpp in Sources */,
 				B90B487C18FD953D00BA6CBD /* data_types.cpp in Sources */,
 				B98F2C1718FC726F00E07898 /* big_endian.cpp in Sources */,
 			);
@@ -178,6 +182,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-std=c++1y",
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -210,6 +218,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-std=c++1y",
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
