@@ -33,75 +33,22 @@ static_assert(sizeof(ULONG) == 4, "ULONG must be 4 bytes");
 using LONG = big_endian<int_fast32_t, 4>;
 static_assert(sizeof(LONG) == 4, "LONG must be 4 bytes");
 
-class Fixed
-{
-public:
-	Fixed(std::array<uint8_t, 2> integer, std::array<uint8_t, 2> fraction)
-		: m_integer(integer)
-		, m_fraction(fraction)
-	{
-	}
-	
-	int_fast16_t GetInteger() const { return m_integer.GetValue(); }
-	uint_fast16_t GetFraction() const { return m_fraction.GetValue(); }
-	
-private:
-	big_endian<int_fast16_t, 2> m_integer;
-	big_endian<uint_fast16_t, 2> m_fraction;
-};
-static_assert(sizeof(Fixed) == 4, "Fixed must be 4 bytes");
-
 using FWORD = big_endian<int_fast16_t, 2>;
 static_assert(sizeof(FWORD) == 2, "FWORD must be 2 bytes");
 	
 using UFWORD = big_endian<uint_fast16_t, 2>;
 static_assert(sizeof(UFWORD) == 2, "UFWORD must be 2 bytes");
 	
-class F2DOT14
-{
-public:
-	F2DOT14(big_endian<uint_fast16_t, 2> bytes)
-		: m_bytes(bytes)
-	{
-	}
-	
-	int_fast8_t GetMantissa() const
-	{
-		uint_fast16_t value = m_bytes.GetValue() >> 14;
-		switch (value)
-		{
-			case 1:
-				return 1;
-			case 2:
-				return -2;
-			case 3:
-				return -1;
-			default:
-				return 0;
-		}
-	}
-	
-	uint_fast16_t GetFraction() const { return m_bytes.GetValue() & 0b0011111111111111; }
-	
-private:
-	big_endian<uint_fast16_t, 2> m_bytes;
-};
-static_assert(sizeof(F2DOT14) == 2, "F2DOT14 must be 2 bytes");
-
-using LONGDATETIME = int64_t;
+using LONGDATETIME = big_endian<int_fast64_t, 8>;
 static_assert(sizeof(LONGDATETIME) == 8, "LONGDATETIME must be 8 bytes");
 
-class Tag
-{
-private:
-	std::array<uint8_t, 4> m_bytes;
-};
+using Tag = big_endian<uint_fast32_t, 4>;
 static_assert(sizeof(Tag) == 4, "Tag must be 4 bytes");
 
-using GlyphId = uint16_t;
+using GlyphId = big_endian<uint_fast16_t, 2>;
 static_assert(sizeof(GlyphId) == 2, "GlyphId must be 2 bytes");
 
-using Offset = uint16_t;
+using Offset = big_endian<uint_fast16_t, 2>;
 static_assert(sizeof(Offset) == 2, "Offset must be 2 bytes");
 
 }

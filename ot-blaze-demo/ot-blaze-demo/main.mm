@@ -34,11 +34,11 @@ int main(int argc, const char * argv[])
 	auto ctHhea = CTFontCopyTable(font, kCTFontTableHhea, kCTFontTableOptionNoOptions);
 	const void * hheaData = CFDataGetBytePtr(ctHhea);
 	const ot::table::hhea * hhea = static_cast<const ot::table::hhea *>(hheaData);
-	std::cout << "hhea.tableVersionNumber.integer = " << hhea->GetTableVersionNumberInteger() << std::endl;
-	std::cout << "hhea.tableVersionNumber.fraction = " << hhea->GetTableVersionNumberFraction() << std::endl;
-	std::cout << "hhea.ascender = " << hhea->GetAscender() << std::endl;
-	std::cout << "hhea.descender = " << hhea->GetDescender() << std::endl;
-	std::cout << "hhea.numberOfHMetrics = " << hhea->GetNumberOfHMetrics() << std::endl;
+	std::cout << "hhea.tableVersionNumber.integer = " << hhea->tableVersionNumber.GetInteger() << std::endl;
+	std::cout << "hhea.tableVersionNumber.fraction = " << hhea->tableVersionNumber.GetFraction() << std::endl;
+	std::cout << "hhea.ascender = " << hhea->ascender.GetValue() << std::endl;
+	std::cout << "hhea.descender = " << hhea->descender.GetValue() << std::endl;
+	std::cout << "hhea.numberOfHMetrics = " << hhea->numberOfHMetrics.GetValue() << std::endl;
 	CFRelease(ctHhea);
 	
 	auto ctHead = CTFontCopyTable(font, kCTFontTableHead, kCTFontTableOptionNoOptions);

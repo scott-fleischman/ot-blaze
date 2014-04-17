@@ -2,45 +2,43 @@
 
 #include <ot/data_type/fixed_point.h>
 
-template<typename TRaw, typename TInteger, typename TFraction, size_t SFraction>
-void TestFixedPoint(TInteger expectedInteger, TFraction expectedFraction, TRaw value)
+void TestF2DOT14(int_fast8_t expectedInteger, uint16_t expectedFraction, float expectedFloat, std::array<uint8_t, 2> bytes)
 {
-	auto fixedPoint = ot::data_type::CreateFixedPoint<TRaw, TInteger, TFraction, SFraction>(value);
-	EXPECT_EQ(expectedInteger, fixedPoint.GetInteger());
-	EXPECT_EQ(expectedFraction, fixedPoint.GetFraction());
+	ot::data_type::F2DOT14 value { bytes };
+	EXPECT_EQ(expectedInteger, value.GetInteger());
+	EXPECT_EQ(expectedFraction, value.GetFraction());
+	
+	const float error = 0.0000001f;
+	EXPECT_GE(value.GetValue(), expectedFloat - error);
+	EXPECT_LE(value.GetValue(), expectedFloat + error);
 }
 
-void TestFixed2pt14(int_fast8_t expectedInteger, uint_fast16_t expectedFraction, int_fast16_t raw)
+TEST(F2DOT14, 1pt999939)
 {
-	TestFixedPoint<int_fast16_t, int_fast8_t, uint_fast16_t, 14>(expectedInteger, expectedFraction, raw);
+	TestF2DOT14(1, 16383, 1.999939f, { 0x7f, 0xff });
 }
 
-TEST(Fixed2pt14, 1pt999939)
+TEST(F2DOT14, 1pt75)
 {
-	TestFixed2pt14(1, 16383, 0x7fff);
+	TestF2DOT14(1, 12288, 1.75f, { 0x70, 0x0 });
 }
 
-TEST(Fixed2pt14, 1pt75)
+TEST(F2DOT14, 0pt000061)
 {
-	TestFixed2pt14(1, 12288, 0x7000);
+	TestF2DOT14(0, 1, 0.000061f, { 0x00, 0x01 });
 }
 
-TEST(Fixed2pt14, 0pt000061)
+TEST(F2DOT14, 0pt0)
 {
-	TestFixed2pt14(0, 1, 0001);
+	TestF2DOT14(0, 0, 0.0f, { 0x00, 0x00 });
 }
 
-TEST(Fixed2pt14, 0pt0)
+TEST(F2DOT14, neg0pt000061)
 {
-	TestFixed2pt14(0, 0, 0000);
+	TestF2DOT14(-1, 16383, -0.000061f, { 0xff, 0xff });
 }
 
-TEST(Fixed2pt14, neg0pt000061)
+TEST(F2DOT14, neg2pt0)
 {
-	TestFixed2pt14(-1, 16383, 0xffff);
-}
-
-TEST(Fixed2pt14, neg2pt0)
-{
-	TestFixed2pt14(-2, 0, 0x8000);
+	TestF2DOT14(-2, 0, -2.0f, { 0x80, 0x00 });
 }
