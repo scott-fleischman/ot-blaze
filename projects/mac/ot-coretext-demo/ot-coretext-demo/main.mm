@@ -54,6 +54,22 @@ int main(int argc, const char * argv[])
 	std::cout << "head.yMax = " << head->yMax.GetValue() << std::endl;
 	CFRelease(ctHead);
 	
+	auto ctCmap = CTFontCopyTable(font, kCTFontTableCmap, kCTFontTableOptionNoOptions);
+	const uint8_t * cmapData = CFDataGetBytePtr(ctCmap);
+	const ot::table::cmap_header * cmap_header = reinterpret_cast<const ot::table::cmap_header *>(cmapData);
+	std::cout << "cmap.version = " << cmap_header->version.GetValue() << std::endl;
+	std::cout << "cmap.numTables = " << cmap_header->numTables.GetValue() << std::endl;
+	int numEncodingTables = cmap_header->numTables.GetValue();
+	for (int encodingIndex = 0; encodingIndex < numEncodingTables; ++encodingIndex)
+	{
+		const uint8_t * encodingRecordData = cmapData + sizeof(ot::table::cmap_header) + sizeof(ot::table::cmap_encoding_record) * encodingIndex;
+		const ot::table::cmap_encoding_record * encodingRecord = reinterpret_cast<const ot::table::cmap_encoding_record *>(encodingRecordData);
+		std::cout << "cmap encoding record[" << encodingIndex << "].platformID = " << encodingRecord->platformID.GetValue() << std::endl;
+		std::cout << "cmap encoding record[" << encodingIndex << "].encodingID = " << encodingRecord->encodingID.GetValue() << std::endl;
+		std::cout << "cmap encoding record[" << encodingIndex << "].offset = " << encodingRecord->offset.GetValue() << std::endl;
+		std::cout << std::endl;
+	}
+	
 	CFRelease(fontTableNames);
 	CFRelease(font);
 	CFRelease(fontName);

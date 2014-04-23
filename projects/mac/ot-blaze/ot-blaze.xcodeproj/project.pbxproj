@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B941751D19080DA7008853C9 /* cmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmap.h; sourceTree = "<group>"; };
 		B9764D5419078ACA000A1DB2 /* libot-blaze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libot-blaze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9764D5D19078ADA000A1DB2 /* big_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = big_endian.h; sourceTree = "<group>"; };
 		B9764D5E19078ADA000A1DB2 /* fixed_point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixed_point.h; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		B9764D6019078ADA000A1DB2 /* table */ = {
 			isa = PBXGroup;
 			children = (
+				B941751D19080DA7008853C9 /* cmap.h */,
 				B9764D6119078ADA000A1DB2 /* head.h */,
 				B9764D6219078ADA000A1DB2 /* hhea.h */,
 			);
