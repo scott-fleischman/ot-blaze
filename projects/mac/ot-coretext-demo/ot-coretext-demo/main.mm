@@ -56,7 +56,7 @@ int main(int argc, const char * argv[])
 	
 	auto ctCmap = CTFontCopyTable(font, kCTFontTableCmap, kCTFontTableOptionNoOptions);
 	const uint8_t * cmapData = CFDataGetBytePtr(ctCmap);
-	ot::table::cmap_navigator cmap { cmapData };
+	ot::table::cmap cmap { cmapData };
 	std::cout << "cmap.version = " << cmap.GetHeader()->GetVersion() << std::endl;
 	std::cout << "cmap.numTables = " << cmap.GetHeader()->GetNumTables() << std::endl;
 	for (auto & encodingRecord : cmap.GetRecords())

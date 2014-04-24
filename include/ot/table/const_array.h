@@ -1,6 +1,5 @@
 #pragma once
 
-
 namespace ot
 {
 namespace table
@@ -11,6 +10,12 @@ template<typename T>
 class const_array
 {
 public:
+	explicit const_array(const T * begin, const T * end)
+		: m_begin { begin }
+		, m_end { end }
+	{
+	}
+
 	explicit const_array(const T * begin, size_t length)
 		: m_begin { begin }
 		, m_end { begin + length }

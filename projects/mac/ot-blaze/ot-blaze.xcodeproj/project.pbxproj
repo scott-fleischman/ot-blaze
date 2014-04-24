@@ -27,6 +27,9 @@
 		B9764D6319078ADA000A1DB2 /* tables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tables.h; sourceTree = "<group>"; };
 		B9764D6A19078BAC000A1DB2 /* all.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = all.cpp; sourceTree = "<group>"; };
 		B9D3859619099837006CC373 /* const_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = const_array.h; sourceTree = "<group>"; };
+		B9D3859719099B54006CC373 /* cmap_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmap_header.h; sourceTree = "<group>"; };
+		B9D3859819099B8C006CC373 /* cmap_encoding_record.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmap_encoding_record.h; sourceTree = "<group>"; };
+		B9D3859919099E15006CC373 /* cmap_format4_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmap_format4_header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +85,12 @@
 			isa = PBXGroup;
 			children = (
 				B941751D19080DA7008853C9 /* cmap.h */,
+				B9D3859819099B8C006CC373 /* cmap_encoding_record.h */,
+				B9D3859919099E15006CC373 /* cmap_format4_header.h */,
+				B9D3859719099B54006CC373 /* cmap_header.h */,
+				B9D3859619099837006CC373 /* const_array.h */,
 				B9764D6119078ADA000A1DB2 /* head.h */,
 				B9764D6219078ADA000A1DB2 /* hhea.h */,
-				B9D3859619099837006CC373 /* const_array.h */,
 			);
 			path = table;
 			sourceTree = "<group>";
