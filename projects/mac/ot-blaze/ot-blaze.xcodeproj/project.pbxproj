@@ -30,6 +30,7 @@
 		B9D3859719099B54006CC373 /* cmap_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmap_header.h; sourceTree = "<group>"; };
 		B9D3859819099B8C006CC373 /* cmap_encoding_record.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmap_encoding_record.h; sourceTree = "<group>"; };
 		B9D3859919099E15006CC373 /* cmap_format4_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmap_format4_header.h; sourceTree = "<group>"; };
+		B9D3859A1909A2D5006CC373 /* twos_complement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = twos_complement.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 			children = (
 				B9764D5D19078ADA000A1DB2 /* big_endian.h */,
 				B9764D5E19078ADA000A1DB2 /* fixed_point.h */,
+				B9D3859A1909A2D5006CC373 /* twos_complement.h */,
 			);
 			path = data_type;
 			sourceTree = "<group>";

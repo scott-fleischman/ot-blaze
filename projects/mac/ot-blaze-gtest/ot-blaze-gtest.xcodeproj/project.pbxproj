@@ -13,6 +13,7 @@
 		B9764CF71907855B000A1DB2 /* fixed_point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9764CF31907855B000A1DB2 /* fixed_point.cpp */; };
 		B9764CF81907855B000A1DB2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9764CF41907855B000A1DB2 /* main.cpp */; };
 		B9764D001907873E000A1DB2 /* gtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9764CFF1907873E000A1DB2 /* gtest.framework */; };
+		B9D3859D1909A778006CC373 /* twos_complement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D3859B1909A778006CC373 /* twos_complement.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,7 @@
 		B9764CF31907855B000A1DB2 /* fixed_point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fixed_point.cpp; path = "../../../tests/ot-blaze-gtest/fixed_point.cpp"; sourceTree = "<group>"; };
 		B9764CF41907855B000A1DB2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "../../../tests/ot-blaze-gtest/main.cpp"; sourceTree = "<group>"; };
 		B9764CFF1907873E000A1DB2 /* gtest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gtest.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/ot-blaze-doucadxdeonibufghrjhynthegrt/Build/Products/Debug/gtest.framework"; sourceTree = "<group>"; };
+		B9D3859B1909A778006CC373 /* twos_complement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = twos_complement.cpp; path = "../../../tests/ot-blaze-gtest/twos_complement.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +55,12 @@
 		B9764CDC19078538000A1DB2 = {
 			isa = PBXGroup;
 			children = (
-				B9764CFF1907873E000A1DB2 /* gtest.framework */,
 				B9764CF11907855B000A1DB2 /* big_endian.cpp */,
 				B9764CF21907855B000A1DB2 /* data_types.cpp */,
 				B9764CF31907855B000A1DB2 /* fixed_point.cpp */,
 				B9764CF41907855B000A1DB2 /* main.cpp */,
+				B9D3859B1909A778006CC373 /* twos_complement.cpp */,
+				B9764CFF1907873E000A1DB2 /* gtest.framework */,
 				B9764CE719078538000A1DB2 /* ot-blaze-gtest */,
 				B9764CE619078538000A1DB2 /* Products */,
 			);
@@ -134,6 +137,7 @@
 				B9764CF61907855B000A1DB2 /* data_types.cpp in Sources */,
 				B9764CF81907855B000A1DB2 /* main.cpp in Sources */,
 				B9764CF71907855B000A1DB2 /* fixed_point.cpp in Sources */,
+				B9D3859D1909A778006CC373 /* twos_complement.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

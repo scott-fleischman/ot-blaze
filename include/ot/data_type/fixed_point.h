@@ -2,6 +2,8 @@
 
 #include <ot/data_type/big_endian.h>
 
+#include "twos_complement.h"
+
 namespace ot
 {
 namespace data_type
