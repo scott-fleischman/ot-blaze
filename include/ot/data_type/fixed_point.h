@@ -7,6 +7,12 @@ namespace ot
 namespace data_type
 {
 
+template<typename T>
+constexpr T GetAndMask(size_t bits)
+{
+	return bits == 0 ? 0 : (GetAndMask<T>(bits - 1) << 1) | 1;
+}
+
 class Fixed
 {
 public:
