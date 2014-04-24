@@ -56,14 +56,16 @@ int main(int argc, const char * argv[])
 	
 	auto ctCmap = CTFontCopyTable(font, kCTFontTableCmap, kCTFontTableOptionNoOptions);
 	const uint8_t * cmapData = CFDataGetBytePtr(ctCmap);
-	const ot::table::cmap_header * cmap_header = reinterpret_cast<const ot::table::cmap_header *>(cmapData);
-	std::cout << "cmap.version = " << cmap_header->GetVersion() << std::endl;
-	std::cout << "cmap.numTables = " << cmap_header->GetNumTables() << std::endl;
-	for (auto & encodingRecord : *cmap_header)
+	ot::table::cmap_navigator cmap { cmapData };
+	std::cout << "cmap.version = " << cmap.GetHeader()->GetVersion() << std::endl;
+	std::cout << "cmap.numTables = " << cmap.GetHeader()->GetNumTables() << std::endl;
+	for (auto & encodingRecord : cmap.GetRecords())
 	{
 		std::cout << "cmap encoding record.platformID = " << encodingRecord.GetPlatformID() << std::endl;
 		std::cout << "cmap encoding record.encodingID = " << encodingRecord.GetEncodingID() << std::endl;
 		std::cout << "cmap encoding record.offset = " << encodingRecord.GetOffset() << std::endl;
+		
+		std::cout << "cmap encoding record format = " << cmap.GetFormat(encodingRecord) << std::endl;
 		std::cout << std::endl;
 	}
 	
