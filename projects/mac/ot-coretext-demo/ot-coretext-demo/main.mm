@@ -44,14 +44,14 @@ int main(int argc, const char * argv[])
 	auto ctHead = CTFontCopyTable(font, kCTFontTableHead, kCTFontTableOptionNoOptions);
 	const void * headData = CFDataGetBytePtr(ctHead);
 	const ot::table::head * head = static_cast<const ot::table::head *>(headData);
-	std::cout << "head.tableVersionNumber.integer = " << head->tableVersionNumber.GetInteger() << std::endl;
-	std::cout << "head.tableVersionNumber.fraction = " << head->tableVersionNumber.GetFraction() << std::endl;
-	std::cout << "head.unitsPerEm = " << head->unitsPerEm.GetValue() << std::endl;
-	std::cout << "head.magicNumber = " << std::hex << head->magicNumber.GetValue() << std::dec << std::endl;
-	std::cout << "head.xMin = " << head->xMin.GetValue() << std::endl;
-	std::cout << "head.yMin = " << head->yMin.GetValue() << std::endl;
-	std::cout << "head.xMax = " << head->xMax.GetValue() << std::endl;
-	std::cout << "head.yMax = " << head->yMax.GetValue() << std::endl;
+	std::cout << "head.tableVersionNumber.integer = " << head->GetTableVersionNumberInteger() << std::endl;
+	std::cout << "head.tableVersionNumber.fraction = " << head->GetTableVersionNumberFraction() << std::endl;
+	std::cout << "head.unitsPerEm = " << head->GetUnitsPerEm() << std::endl;
+	std::cout << "head.magicNumber = " << std::hex << head->GetMagicNumber() << std::dec << std::endl;
+	std::cout << "head.xMin = " << head->GetXMin() << std::endl;
+	std::cout << "head.yMin = " << head->GetYMin() << std::endl;
+	std::cout << "head.xMax = " << head->GetXMax() << std::endl;
+	std::cout << "head.yMax = " << head->GetYMax() << std::endl;
 	CFRelease(ctHead);
 	
 	auto ctCmap = CTFontCopyTable(font, kCTFontTableCmap, kCTFontTableOptionNoOptions);
