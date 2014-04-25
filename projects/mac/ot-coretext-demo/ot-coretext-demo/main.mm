@@ -44,6 +44,7 @@ int main(int argc, const char * argv[])
 	auto ctHead = CTFontCopyTable(font, kCTFontTableHead, kCTFontTableOptionNoOptions);
 	const void * headData = CFDataGetBytePtr(ctHead);
 	const ot::table::head * head = static_cast<const ot::table::head *>(headData);
+	std::cout << "head.tableVersionNumber = " << head->GetTableVersionNumber() << std::endl;
 	std::cout << "head.tableVersionNumber.integer = " << head->GetTableVersionNumberInteger() << std::endl;
 	std::cout << "head.tableVersionNumber.fraction = " << head->GetTableVersionNumberFraction() << std::endl;
 	std::cout << "head.unitsPerEm = " << head->GetUnitsPerEm() << std::endl;
