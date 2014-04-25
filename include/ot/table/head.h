@@ -10,6 +10,7 @@ namespace table
 class head
 {
 public:
+	/// 0x00010000 for version 1.0.
 	float GetTableVersionNumber() const { return tableVersionNumber.GetValue(); }
 	int_fast16_t GetTableVersionNumberInteger() const { return tableVersionNumber.GetInteger(); }
 	uint_fast16_t GetTableVersionNumberFraction() const { return tableVersionNumber.GetFraction(); }
@@ -35,7 +36,7 @@ public:
 	int_fast16_t GetGlyphDataFormat() const { return glyphDataFormat.GetValue(); }
 
 private:
-	ot::data_type::Fixed tableVersionNumber; // 0x00010000 for version 1.0.
+	ot::data_type::Fixed tableVersionNumber;
 	ot::data_type::Fixed fontRevision; // Set by font manufacturer.
 	ot::data_type::ULONG checkSumAdjustment; // To compute: set it to 0, sum the entire font as ULONG, then store 0xB1B0AFBA - sum.
 	ot::data_type::ULONG magicNumber; // Set to 0x5F0F3CF5.
