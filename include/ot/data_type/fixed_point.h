@@ -14,6 +14,45 @@ constexpr T GetAndMask(size_t bits)
 	return bits == 0 ? 0 : (GetAndMask<T>(bits - 1) << 1) | 1;
 }
 
+template<typename TSigned, size_t integerBits, size_t fractionBits>
+class SignedFixedPoint
+{
+	using TUnsigned = typename std::make_unsigned<TSigned>::type;
+	static_assert(std::is_signed<TSigned>::value, "TSigned must be signed");
+	static_assert(std::is_arithmetic<TSigned>::value, "TSigned must be arithmetic");
+	static_assert(fractionBits != 0, "fractionBits must be positive");
+	static_assert(integerBits != 0, "integerBits must be positive");
+	
+public:
+	SignedFixedPoint(TUnsigned raw)
+		: m_raw { raw }
+	{
+	}
+
+	TSigned GetInteger() const
+	{
+		return GetTwosComplementSignedValue<TUnsigned, integerBits>(m_raw >> fractionBits);
+	}
+
+	TUnsigned GetFractionNumerator() const
+	{
+		return m_raw & GetAndMask<TUnsigned>(fractionBits);
+	}
+	
+	TUnsigned GetFractionDenominator() const
+	{
+		return 1 << fractionBits;
+	}
+	
+	float GetFloatValue() const
+	{
+		return GetInteger() + GetFractionNumerator() / static_cast<float>(GetFractionDenominator());
+	}
+
+private:
+	TUnsigned m_raw;
+};
+
 class Fixed
 {
 public:

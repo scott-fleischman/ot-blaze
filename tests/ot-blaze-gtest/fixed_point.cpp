@@ -42,3 +42,10 @@ TEST(F2DOT14, neg2pt0)
 {
 	TestF2DOT14(-2, 0, -2.0f, { 0x80, 0x00 });
 }
+
+TEST(x, y)
+{
+	ot::data_type::SignedFixedPoint<int_fast8_t, 2, 6> x { 0b10000000 };
+	EXPECT_EQ(-2, x.GetInteger());
+}
+
