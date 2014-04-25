@@ -46,18 +46,7 @@ public:
 	
 	int_fast8_t GetInteger() const
 	{
-		uint_fast16_t value = m_bytes.GetValue() >> 14;
-		switch (value)
-		{
-			case 1:
-				return 1;
-			case 2:
-				return -2;
-			case 3:
-				return -1;
-			default:
-				return 0;
-		}
+		return GetTwosComplementSignedValue<uint_least16_t, 2>(m_bytes.GetValue() >> 14);
 	}
 	
 	uint_fast16_t GetFraction() const { return m_bytes.GetValue() & 0b0011111111111111; }
