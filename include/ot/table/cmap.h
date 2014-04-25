@@ -19,6 +19,10 @@ public:
 	{
 	}
 	
+	uint_fast16_t GetVersion() const { return GetHeader()->GetVersion(); }
+	
+	uint_fast16_t GetNumTables() const { return GetHeader()->GetNumTables(); }
+	
 	const cmap_header * GetHeader() const
 	{
 		return reinterpret_cast<const cmap_header *>(m_data);
