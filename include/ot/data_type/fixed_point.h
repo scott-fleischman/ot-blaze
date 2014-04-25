@@ -1,7 +1,6 @@
 #pragma once
 
-#include <ot/data_type/big_endian.h>
-
+#include "big_endian.h"
 #include "twos_complement.h"
 
 namespace ot
@@ -49,7 +48,7 @@ public:
 		return GetTwosComplementSignedValue<uint_least16_t, 2>(m_bytes.GetValue() >> 14);
 	}
 	
-	uint_fast16_t GetFraction() const { return m_bytes.GetValue() & 0b0011111111111111; }
+	uint_fast16_t GetFraction() const { return m_bytes.GetValue() & GetAndMask<uint_fast16_t>(14); }
 	
 private:
 	big_endian<uint_fast16_t, 2> m_bytes;
