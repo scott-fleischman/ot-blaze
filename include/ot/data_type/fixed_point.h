@@ -29,7 +29,7 @@ public:
 	uint_fast16_t GetFraction() const { return m_fraction.GetValue(); }
 	
 private:
-	big_endian<int_fast16_t, 2> m_integer;
+	signed_big_endian<int_fast16_t, 2> m_integer;
 	big_endian<uint_fast16_t, 2> m_fraction;
 };
 static_assert(sizeof(Fixed) == 4, "Fixed must be 4 bytes");

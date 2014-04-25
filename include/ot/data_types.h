@@ -12,16 +12,16 @@ namespace ot
 namespace data_type
 {
 
-using BYTE = uint8_t;
+using BYTE = big_endian<uint_fast8_t, 1>;
 static_assert(sizeof(BYTE) == 1, "BYTE must be 1 byte");
 
-using CHAR = int8_t;
+using CHAR = signed_big_endian<int_fast8_t, 1>;
 static_assert(sizeof(BYTE) == 1, "CHAR must be 1 byte");
 
 using USHORT = big_endian<uint_fast16_t, 2>;
 static_assert(sizeof(USHORT) == 2, "USHORT must be 2 bytes");
 
-using SHORT = big_endian<int_fast16_t, 2>;
+using SHORT = signed_big_endian<int_fast16_t, 2>;
 static_assert(sizeof(SHORT) == 2, "SHORT must be 2 bytes");
 
 using UINT24 = big_endian<uint_fast32_t, 3>;
@@ -30,16 +30,16 @@ static_assert(sizeof(UINT24) == 3, "UINT24 must be 3 bytes");
 using ULONG = big_endian<uint_fast32_t, 4>;
 static_assert(sizeof(ULONG) == 4, "ULONG must be 4 bytes");
 
-using LONG = big_endian<int_fast32_t, 4>;
+using LONG = signed_big_endian<int_fast32_t, 4>;
 static_assert(sizeof(LONG) == 4, "LONG must be 4 bytes");
 
-using FWORD = big_endian<int_fast16_t, 2>;
+using FWORD = signed_big_endian<int_fast16_t, 2>;
 static_assert(sizeof(FWORD) == 2, "FWORD must be 2 bytes");
 	
 using UFWORD = big_endian<uint_fast16_t, 2>;
 static_assert(sizeof(UFWORD) == 2, "UFWORD must be 2 bytes");
 	
-using LONGDATETIME = big_endian<int_fast64_t, 8>;
+using LONGDATETIME = signed_big_endian<int_fast64_t, 8>;
 static_assert(sizeof(LONGDATETIME) == 8, "LONGDATETIME must be 8 bytes");
 
 using Tag = big_endian<uint_fast32_t, 4>;
